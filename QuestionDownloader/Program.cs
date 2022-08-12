@@ -104,7 +104,7 @@ namespace QuestionDownloader
         {
             var question = serializer.Deserialize(new StringReader(questionData.Value)) as Xml2CSharp.AssessmentItem;
 
-            var data = string.Join(",", "", questionData.Key, "\"" + question.ItemBody.Text.Replace("\"", "\"\"") + "\"");
+            var data = string.Join(",", "", "\"" + questionData.Key + "\"", "\"" + question.ItemBody.Text.Replace("\"", "\"\"") + "\"");
             writer.WriteLine(data);
 
 
